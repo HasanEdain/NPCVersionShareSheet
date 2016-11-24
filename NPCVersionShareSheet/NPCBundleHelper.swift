@@ -10,6 +10,8 @@ import Foundation
 
 public class NPCBundleHelper {
 
+    /// Convenience Wrapper around Bundle allFrameworks
+    /// Returns ONLY bundles with Bundle Identifiers
     public static func allBundles() -> [Bundle] {
         let all = Bundle.allFrameworks
         var allWithBundles = [Bundle]()
@@ -23,6 +25,7 @@ public class NPCBundleHelper {
         return allWithBundles
     }
 
+    /// All bundles that do not contain com.apple
     public static func allNonAppleBundles() -> [Bundle] {
         let all = NPCBundleHelper.allBundles()
         var nonApple = [Bundle]()
@@ -38,6 +41,9 @@ public class NPCBundleHelper {
     }
 
     // Filter
+
+    /// Filter a list of Bundles with a string (compares to the bundle identifier)
+    /// @return [Bundle]
     public static func filterBundleList(bundleList: [Bundle], filterString: String) -> [Bundle] {
         var filteredBundles = [Bundle]()
 
@@ -55,6 +61,9 @@ public class NPCBundleHelper {
     }
 
     // Text
+
+    /// A string rendering of each Bundle in the array
+    /// @return String
     public static func bundleListString(bundleList: [Bundle]) -> String {
         var bundlesString = ""
         for bundle in bundleList {
@@ -65,6 +74,7 @@ public class NPCBundleHelper {
         return bundlesString
     }
 
+    /// A string representation of a Bundle
     public static func bundleString(bundle: Bundle) -> String {
         var bundleIdentifierString: String
         if let bndleIdentifierString = bundle.bundleIdentifier {
