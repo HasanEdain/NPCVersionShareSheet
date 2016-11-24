@@ -10,7 +10,10 @@ A simple framework for showing a UIViewController With all of the Dynamic Framew
 # Install
 Example Application: Run in Xcode 8 +
 
-Framework:
+# Requirements
+iOS 9.3 +
+
+# Framework
 ## Build yourself
 Copy the framework into your project
 ## Carthage
